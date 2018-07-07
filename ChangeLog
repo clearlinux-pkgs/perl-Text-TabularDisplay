@@ -1,0 +1,84 @@
+libtext-tabulardisplay-perl (1.38-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.38
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 07 Jul 2014 20:54:19 +0200
+
+libtext-tabulardisplay-perl (1.37-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 1.35
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 1.37
+  * Update copyright years for upstream files
+  * Update copyright years for debian/* packaging files
+  * Declare compliance with Debian Policy 3.9.5
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 04 Jul 2014 20:40:13 +0200
+
+libtext-tabulardisplay-perl (1.34-1) unstable; urgency=low
+
+  [ Nathan Handler ]
+  * Email change: Nathan Handler -> nhandler@debian.org
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 1.34
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+  * Bump Standards-Version to 3.9.4
+  * Add myself to Uploaders
+  * Update copyright for debian/* packaging files
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 12 May 2013 18:33:09 +0200
+
+libtext-tabulardisplay-perl (1.33-1) unstable; urgency=low
+
+  * Team upload.
+  * Imported Upstream version 1.33
+    + Fix handling of undef values in cells (Closes: #680831).
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 09 Jul 2012 01:05:02 +0200
+
+libtext-tabulardisplay-perl (1.31-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - Add myself to list of Uploaders
+  * debian/copyright:
+    - Add myself to debian/* copyright
+    - Add year for Florian Schlichting
+    - Remove trailing whitespace in license
+
+ -- Nathan Handler <nhandler@ubuntu.com>  Sat, 23 Jun 2012 21:16:32 -0500
+
+libtext-tabulardisplay-perl (1.30-1) unstable; urgency=low
+
+  [ Harlan Lieberman-Berg ]
+  * Team upload.
+  * New upstream version.
+  * debian/control:
+    - Bumped debhelper to 8.
+  * debian/copyright:
+    - Reflow paragraphs, add version specifications to stanzas
+  * Added source format explicitly.
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Florian Schlichting ]
+  * Imported Upstream version 1.30.
+  * Updated years of upstream copyright, limiting to GPL-2 no later.
+  * Bumped Standards-Version to 3.9.3 (use copyright-format 1.0).
+  * Added myself to uploaders and copyright.
+
+ -- Florian Schlichting <fschlich@zedat.fu-berlin.de>  Sun, 01 Apr 2012 22:54:04 +0200
+
+libtext-tabulardisplay-perl (1.22-1) unstable; urgency=low
+
+  * Initial Release (Closes: #549247)
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 10 Oct 2009 08:28:11 -0400
