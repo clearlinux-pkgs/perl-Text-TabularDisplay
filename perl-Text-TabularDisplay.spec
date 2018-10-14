@@ -4,21 +4,30 @@
 #
 Name     : perl-Text-TabularDisplay
 Version  : 1.38
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DARREN/Text-TabularDisplay-1.38.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DARREN/Text-TabularDisplay-1.38.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtext-tabulardisplay-perl/libtext-tabulardisplay-perl_1.38-1.debian.tar.xz
 Summary  : Display text in formatted table output
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: perl-Text-TabularDisplay-license
-Requires: perl-Text-TabularDisplay-man
+Requires: perl-Text-TabularDisplay-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 NAME
 Text::TabularDisplay - Display text in formatted table output
 SYNOPSIS
 use Text::TabularDisplay;
+
+%package dev
+Summary: dev components for the perl-Text-TabularDisplay package.
+Group: Development
+Provides: perl-Text-TabularDisplay-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Text-TabularDisplay package.
+
 
 %package license
 Summary: license components for the perl-Text-TabularDisplay package.
@@ -28,19 +37,11 @@ Group: Default
 license components for the perl-Text-TabularDisplay package.
 
 
-%package man
-Summary: man components for the perl-Text-TabularDisplay package.
-Group: Default
-
-%description man
-man components for the perl-Text-TabularDisplay package.
-
-
 %prep
-tar -xf %{SOURCE1}
-cd ..
 %setup -q -n Text-TabularDisplay-1.38
-mkdir -p %{_topdir}/BUILD/Text-TabularDisplay-1.38/deblicense/
+cd ..
+%setup -q -T -D -n Text-TabularDisplay-1.38 -b 1
+mkdir -p deblicense/
 mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Text-TabularDisplay-1.38/deblicense/
 
 %build
@@ -65,12 +66,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Text-TabularDisplay
-cp COPYING %{buildroot}/usr/share/doc/perl-Text-TabularDisplay/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Text-TabularDisplay
+cp COPYING %{buildroot}/usr/share/package-licenses/perl-Text-TabularDisplay/COPYING
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -79,12 +80,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Text/TabularDisplay.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Text/TabularDisplay.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Text-TabularDisplay/COPYING
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Text::TabularDisplay.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Text-TabularDisplay/COPYING
