@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-TabularDisplay
 Version  : 1.38
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DARREN/Text-TabularDisplay-1.38.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DARREN/Text-TabularDisplay-1.38.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtext-tabulardisplay-perl/libtext-tabulardisplay-perl_1.38-1.debian.tar.xz
@@ -103,4 +103,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Text/TabularDisplay.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Text/TabularDisplay.pm
